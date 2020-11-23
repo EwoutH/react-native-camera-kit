@@ -19,6 +19,6 @@ android {
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
-    implementation 'com.google.zxing:core:3.3.3'
+    implementation 'com.google.zxing:core:3.4.1'
     implementation group: 'com.drewnoakes', name: 'metadata-extractor', version: '2.15.0'
 }
