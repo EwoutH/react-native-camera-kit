@@ -2,7 +2,7 @@ name: Update Gradle Wrapper
 on: [push, pull_request]
 
 jobs:
-  update-gradle-wrapper:
+  update-gradle-wrapper-example:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,3 +15,17 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           base-branch: master
           working-directory: example/android
+
+  update-gradle-wrapper-android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: bahmutov/npm-install@v1
+        with:
+          working-directory: android
+      - name: Update Gradle Wrapper
+        uses: gradle-update/update-gradle-wrapper-action@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          base-branch: master
+          working-directory: android
