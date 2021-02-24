@@ -6,6 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: bahmutov/npm-install@v1
+        with:
+          working-directory: example/android
       - name: Update Gradle Wrapper
         uses: gradle-update/update-gradle-wrapper-action@v1
         with:
